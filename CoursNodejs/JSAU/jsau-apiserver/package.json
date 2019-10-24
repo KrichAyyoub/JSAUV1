@@ -8,9 +8,14 @@
     "start:watch": "nodemon",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "build": "npm run build:js",
-      "build:js": "browserify src/resource/js/main.js > src/resource/js/bundle.js",
-    "clean": "rm -rf src/resource/js/bundle.js"
+    "build": "npm run build:css && npm run build:js",
+    "build:js": "browserify src/resource/js/main.js > src/resource/js/bundle.js | browserify src/resource/js/bundle.js | uglifyjs --compress > resource/js/bundle.min.js",
+    "clean": "rm -rf src/resource/js/bundle.js",
+    "build:css": "mkdir src/resource/css && lessc src/resource/less/main.less | postcss -u autoprefixer -u pixrem -c postcss.json | cleancss > src/resource/css/bundle.min.css",
+    "clean": "echo 'TODO: Implement this script'"
+
+
+
   },
   "author": "",
   "license": "ISC",
@@ -24,9 +29,15 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "2.5.0",
     "@typescript-eslint/parser": "2.5.0",
+    "autoprefixer": "9.7.0",
     "browserify": "16.5.0",
+    "clean-css": "4.2.1",
+    "clean-css-cli": "4.3.0",
     "eslint": "6.5.1",
     "eslint-plugin-react": "7.16.0",
-    "nodemon": "1.19.4"
+    "less": "3.10.3",
+    "nodemon": "1.19.4",
+    "pixrem": "5.0.0",
+    "postcss-cli": "6.1.3"
   }
 }
