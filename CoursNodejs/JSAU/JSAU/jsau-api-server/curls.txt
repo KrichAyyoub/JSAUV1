@@ -1,0 +1,42 @@
+curl -i -X GET http://localhost:8081/jsauapi/v1/news/1
+curl -i -X GET http://localhost:8081/jsauapi/v1/news/404
+curl -i -X GET http://localhost:8081/jsauapi/v1/news/string
+
+
+
+curl -i -X POST \
+    -H "Content-Type: application/json" \
+    -d '{ "title": "test again", "content": "Krich Ayyoub", "tags": ["tag1", "tag4"] }' \
+    http://localhost:8081/jsauapi/v1/news
+
+
+curl -i -X POST \
+  http://localhost:8081/jsauapi/v1/news
+
+
+curl -i -X PUT \
+    -H "Content-Type: application/json" \
+    -d '{ "title": "The first", "content": "Krich Ayyoub 2", "tags": ["tag1", "tag4"] }' \
+    http://localhost:8081/jsauapi/v1/news/1curl -i -X PUT \
+    -H "Content-Type: application/json" \
+    -d '{ "title": "The first", "content": "Krich Ayyoub 2", "tags": ["tag1", "tag4"] }' \
+    http://localhost:8081/jsauapi/v1/news/404curl -i -X PUT  http://localhost:8081/jsauapi/v1/news/1
+
+
+
+
+curl -i -X PUT  http://localhost:8081/jsauapi/v1/news/string
+
+
+curl -i -X DELETE http://localhost:8081/jsauapi/v1/news/1
+curl -i -X DELETE http://localhost:8081/jsauapi/v1/news/404
+curl -i -X DELETE http://localhost:8081/jsauapi/v1/news/string
+
+
+
+
+
+
+
+
+curl -i -X GET http://localhost:1337/jsauapi/v1/news
