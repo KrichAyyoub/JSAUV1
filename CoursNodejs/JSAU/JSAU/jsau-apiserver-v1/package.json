@@ -1,0 +1,26 @@
+{
+  "name": "jsau-apiserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:watch": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "6.6.0",
+    "eslint-config-usecases": "1.3.0",
+    "morgan": "1.9.1",
+    "nodemon": "1.19.4"
+  }
+}
